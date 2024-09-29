@@ -5,6 +5,7 @@
 Telecom companies across the world are facing a need to constantly evolve due to the changing customer needs and competition in the market. Telecom companies not just need to keep their plans and services competitive but also need to customize their offerings based on the patterns and needs of customer segments. Adopting a correct strategy is key not only towards increasing the customer base but also to retain the current customers and preventing churn. Based on surveys, post pandemic the customer loyalty to Telecom providers has gone down by 22% - taking the average churn rate for telecom companies in the range of 22-35% with customer stickiness being impacted more by the customer experience than ever. Moreover customers are becoming increasingly price sensitive and a good majority perceive Telco offerings as expensive. As per studies, it costs companies 5x more to acquire a new customer as compared to retaining current customer. Moreover, it is critical to retain high value customers like corporate customers, small and medium enterprises, family plan customers and such other categories.
 Therefore its is a key part of the Telco strategy to identify the underlying patterns that impact churn and then take necessary actions for customer retention - the policies applied for retention may be different as per the customer category - such as network service improvement, better internet speed, bundled plans - such as mobile + broadband + content bundling or family bundles etc. Thus churn prediction plays an important role in driving marketing strategy decisions for a Telecom company.
 As part of this analysis a the data set used is from a major Telecom company in South East Asia and the objective is to analyse the data and prepare a model that can predit the churn probability with maximum accuracy.
+
 **Customer behaviour during churn:**
 
 Customers usually do not decide to switch to another competitor instantly, but rather over a period of time (this is especially applicable to high-value customers). In churn prediction, we assume that there are three phases of customer lifecycle :
@@ -53,5 +54,29 @@ Below scatter plots give an indication of the contribution of PC1 and PC2 toward
 ![image](https://github.com/user-attachments/assets/6f507c1c-9ee3-4d1f-bb35-a3ec93a065ae)
 
 
+# Model Building & Evaluation
+
+**Logistic Regression - Model**
+
+**LR Model 1**: The base model built as a pipeline with imputation, scaling, transformation, PCA and logistic regression provides an accuracy of **90.91 on the train data** and **90.97 on the test data**.
+**LR Model 2**: With the use of train data oversampled through SMOTE the same model shows a reduction in accuracy with **train accuracy of 87.62%** and **test accuracy of 90.78%**.
+
+**Random Forest - Model**
+
+A model built with pipeline of imputation, scaling, transformation, PCA and RandomForestClassifier (with 150 estimators, min_samples_leaf = 3 and min_samples_split=6) provides following results:
+**RF Model 1**: **With SMOTE on Train Data** --> **Training Accuracy: 97.19%** ... **Test Accuracy : 91.7%** ... Indicates overfitting on train data
+**RF Model 2**: **Without SMOTE on Train Data** --> **Training Accuracy: 96.97%** ... **Test Accuracy : 91.8%** ... Indicates overfitting on train data
+
+**RF Pipeline with GridSerchCV**
+
+The parameters for RandomForestClassifier derived through GridSearchCV turn out to be - min_samples_leaf=2, min_samples_split=6, n_estimators=200.
+With these parameters the accuracy scores are as below
+**RF Model 3**: **With SMOTE on Train Data** --> **Training Accuracy: 98.04%** ... **Test Accuracy : 91.76%** ... Indicates overfitting on train data
+**RF Model 4**: **Without SMOTE on Train Data** --> **Training Accuracy: 97.62%** ... **Test Accuracy : 91.91%** ... Indicates overfitting on train data
+
+**XGBoost Model**
+
+**XG Model 1**: Model built with XGBoost using default parameters gives a **test accuracy score of 93%** (with/without SMOTE)
+**XG Model 1**: After performing a hyperparameter tuning with random search on XGBoost there is a slight improvement in **test accuracy to 93.45%**.
 
 
