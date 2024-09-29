@@ -1,4 +1,4 @@
-# Telecom_Churn_Prediction
+# Telecom Churn Prediction
 # Problem Statement
 **Telecom Landscape and Strategy Evolution**
 
