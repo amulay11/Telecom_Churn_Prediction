@@ -28,4 +28,12 @@ The below plots show the trend of the average outgoing monthly usage for churned
 
 ![image](https://github.com/user-attachments/assets/ed1efdae-772c-4c5c-82e5-e563876f63d2)
 
+**Data Capping, Class imbalance and Scaling**
 
+Further as part of the data processing, the outliers have been handled using k-sigma-capping method that caps the upper and lower bound in a range of k time std deviation from the mean.
+As observed there is a class imbalance in the train data as the minority class population is 10% of the majority class. SMOTE technique has been applied to oversample the minority class to increase it to 20% of the overall data.
+Features have been scaled using the standard scaler in order to eliminate issues in statistical processing due to different scale of data. 
+
+**Data Transformation**
+
+Based on the 
