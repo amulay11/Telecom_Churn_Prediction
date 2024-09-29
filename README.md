@@ -36,4 +36,22 @@ Features have been scaled using the standard scaler in order to eliminate issues
 
 **Data Transformation**
 
-Based on the 
+Based on the box plots for the data features and the calculation of the skewness it is observed that some of features have a positive skew as indicated by the upper tail of the box plot that has more length. Yeo-Johnson transformation has been applied on the data features with positive skewness. 
+
+**Feature Engineering**
+
+As seen from the below plotting of feature importance using random forest, it is clear that the features for the action phase (month 7) have a significant contribution towards the churn probability.
+
+![image](https://github.com/user-attachments/assets/8f571ea5-8243-4297-9b38-975bc4490e91)
+
+Further, PCA has been performed on the data to derive principal components that contribute towards the target variable.
+
+Below scatter plots give an indication of the contribution of PC1 and PC2 towards the churn probability
+
+![image](https://github.com/user-attachments/assets/4d42ad16-0fab-42a4-a418-4c9f29d7db72)
+
+![image](https://github.com/user-attachments/assets/6f507c1c-9ee3-4d1f-bb35-a3ec93a065ae)
+
+
+
+
