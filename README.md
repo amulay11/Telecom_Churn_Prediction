@@ -105,5 +105,7 @@ With these parameters the accuracy scores are as below
 
 ## Overall Assessment
 
+The dataset provided primarily has features providing information about the subscriber's age on network, recharge behavior and usage patterns for calls and internet. After performing initial processing on the dataset, deriving some features with EDA and then using multiple ML algorithms for prediction of churn probability a fair accuracy of 93.57% is obtained using XGBoost on the unseen data. The final model may be used on more unseen data with similar feature characteristics to predict the churn probability and take appropriate strategic measures to take the right steps in the action phase so that the churn can be prevented and the subscriber can be retained. 
 
+However overall there can be more features that can help to assess the churn probability better such as - age/gender/address region/profession/income demographics of the customer that can help in segmentation of the data and then use classification on different segments as the segments may exhibit varying characteristics. 
 
