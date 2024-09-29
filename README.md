@@ -16,4 +16,4 @@ The ‘churn’ phase: In this phase, the customer is said to have churned. In t
 The training dataset is provided in a csv format with 172 fields indicating various features and behavioral characteristics of a telecom customer. The end goal is to predict the churn_probability of the customer through an analysis and statistical processing of the features provided by means of machine learning techniques. Multiple machine learning modelling techniques are implemented in the project and they are evaluated on the test dataset to assess the performance based on accuracy and other metrics. Finally the aim is to narrow down to the best model that provides the most accurate results on the test data.
 
 # Data Processing & EDA
-
+For the initial data processing the training dataset has been loaded into dataframe followed by split into train and validation set and then handling of missing data. For missing data handling simple imputation with constant value has been used for few numeric fields and date fields have been imputed with a past date followed by derivation of new fields indicating "Days since".
