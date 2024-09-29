@@ -17,3 +17,15 @@ The training dataset is provided in a csv format with 172 fields indicating vari
 
 # Data Processing & EDA
 For the initial data processing the training dataset has been loaded into dataframe followed by split into train and validation set and then handling of missing data. For missing data handling simple imputation with constant value has been used for few numeric fields and date fields have been imputed with a past date followed by derivation of new fields indicating "Days since".
+As observed from the box plots below, for the customers with a churn probability of 1, there is a reduction in the total monhly outgoing usage from month 6 (Good phase ) thru month 8 (churn phase)
+
+![image](https://github.com/user-attachments/assets/01473fd7-1c37-45d6-ab50-88668c597120)
+
+From the scatter plot below it can be observed that there is a higher concentration of churned customers for lower values of "age on network" and higher values of "days since last recharge".
+![image](https://github.com/user-attachments/assets/c9599eb0-5ced-4ccc-9dad-ee25c121f04e)
+
+The below plots show the trend of the average outgoing monthly usage for churned customers (blue) and non churned customers (red). We see a stark decline in the usage for the churned customers from the good phase to the action phase and then further steep decline towards the churn phase.
+
+![image](https://github.com/user-attachments/assets/ed1efdae-772c-4c5c-82e5-e563876f63d2)
+
+
