@@ -59,34 +59,46 @@ Below scatter plots give an indication of the contribution of PC1 and PC2 toward
 **Logistic Regression - Model**
 
 **LR Model 1**: The base model built as a pipeline with imputation, scaling, transformation, PCA and logistic regression provides an accuracy of **90.91 on the train data** and **90.97 on the test data**.
+
 **LR Model 2**: With the use of train data oversampled through SMOTE the same model shows a reduction in accuracy with **train accuracy of 87.62%** and **test accuracy of 90.78%**.
 
 **Random Forest - Model**
 
 A model built with pipeline of imputation, scaling, transformation, PCA and RandomForestClassifier (with 150 estimators, min_samples_leaf = 3 and min_samples_split=6) provides following results:
+
 **RF Model 1**: **With SMOTE on Train Data** --> **Training Accuracy: 97.19%** ... **Test Accuracy : 91.7%** ... Indicates overfitting on train data
+
 **RF Model 2**: **Without SMOTE on Train Data** --> **Training Accuracy: 96.97%** ... **Test Accuracy : 91.8%** ... Indicates overfitting on train data
 
 **RF Pipeline with GridSerchCV**
 
 The parameters for RandomForestClassifier derived through GridSearchCV turn out to be - min_samples_leaf=2, min_samples_split=6, n_estimators=200.
 With these parameters the accuracy scores are as below
+
 **RF Model 3**: **With SMOTE on Train Data** --> **Training Accuracy: 98.04%** ... **Test Accuracy : 91.76%** ... Indicates overfitting on train data
+
 **RF Model 4**: **Without SMOTE on Train Data** --> **Training Accuracy: 97.62%** ... **Test Accuracy : 91.91%** ... Indicates overfitting on train data
 
 **XGBoost Model**
 
 **XG Model 1**: Model built with XGBoost using default parameters gives a **test accuracy score of 93%** (with/without SMOTE)
+
 **XG Model 2**: After performing a hyperparameter tuning with random search on XGBoost there is a slight improvement in **test accuracy to 93.45%**.
 
 ## Results on Unseen data
 
 **LR Model 2** : Accuracy of **90.81%**
+
 **RF Model 2** : Accuracy of **91.95%**
+
 **RF Model 3** : Accuracy of **92.11%**
+
 **RF Model 4** : Accuracy of **92.11%**
+
 **RF Model 4 with capping of unseen data** : Accuracy of **92.10%**
+
 **XG Model 2 with SMOTE on train data** : Accuracy of **93.33%**
+
 **XG Model 2 without SMOTE with capping on unseen data** : Accuracy of **93.57%**
 
 #### Best Accuracy obtained is 93.570% for the XGBoost tuned model without SMOTE as XGBoost has a hyperparameter for handling class imbalance
