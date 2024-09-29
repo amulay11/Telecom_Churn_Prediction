@@ -77,6 +77,21 @@ With these parameters the accuracy scores are as below
 **XGBoost Model**
 
 **XG Model 1**: Model built with XGBoost using default parameters gives a **test accuracy score of 93%** (with/without SMOTE)
-**XG Model 1**: After performing a hyperparameter tuning with random search on XGBoost there is a slight improvement in **test accuracy to 93.45%**.
+**XG Model 2**: After performing a hyperparameter tuning with random search on XGBoost there is a slight improvement in **test accuracy to 93.45%**.
+
+## Results on Unseen data
+
+**LR Model 2** : Accuracy of **90.81%**
+**RF Model 2** : Accuracy of **91.95%**
+**RF Model 3** : Accuracy of **92.11%**
+**RF Model 4** : Accuracy of **92.11%**
+**RF Model 4 with capping of unseen data** : Accuracy of **92.10%**
+**XG Model 2 with SMOTE on train data** : Accuracy of **93.33%**
+**XG Model 2 without SMOTE with capping on unseen data** : Accuracy of **93.57%**
+
+#### Best Accuracy obtained is 93.570% for the XGBoost tuned model without SMOTE as XGBoost has a hyperparameter for handling class imbalance
+
+## Overall Assessment
+
 
 
